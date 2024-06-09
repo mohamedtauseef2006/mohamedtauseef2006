@@ -1,0 +1,30 @@
+arr = [0] * 100
+size = 0
+
+def display_array():
+    print("Array elements: ", end="")
+    for i in range(size):
+        print(arr[i], end=" ")
+    print()
+
+def insert_number(location, number):
+    global size
+    if location < 0 or location > size:
+        print("Invalid location")
+        return
+    for i in range(size, location, -1):
+        arr[i] = arr[i-1]
+    arr[location] = number
+    size += 1
+    print(f"{number} inserted at location {location}")
+
+def delete_number(location):
+    global size
+    if location < 0 or location >= size:
+        print("Invalid location")
+        return
+    print(f"{arr[location]} deleted from location {location}")
+    for i in range(location, size-1):
+        arr[i] = arr[i+1]
+    size -= 1
+
