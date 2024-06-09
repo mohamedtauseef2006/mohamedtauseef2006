@@ -1,0 +1,37 @@
+import math
+
+MAXSIZE = 10
+
+def main():
+    x = [0.0] * MAXSIZE
+    n = 0
+    average = 0.0
+    variance = 0.0
+    std_deviation = 0.0
+    sum_x = 0.0
+    sum_squared_diff = 0.0
+
+    print("Enter the number of values: ", end="")
+    n = int(input())
+
+    print("Enter values: ", end="")
+    for i in range(n):
+        x[i] = float(input())
+
+    for i in range(n):
+        sum_x += x[i]
+
+    average = sum_x / n
+
+    for i in range(n):
+        sum_squared_diff += (x[i] - average) ** 2
+
+    variance = sum_squared_diff / n
+    std_deviation = math.sqrt(variance)
+
+    print(f"Mean = {average:.2f}")
+    print(f"Variance = {variance:.2f}")
+    print(f"Deviation = {std_deviation:.2f}")
+
+if __name__ == "__main__":
+    main()
