@@ -1,0 +1,22 @@
+import sys
+
+arr = [0] * 100
+n = int(input("Enter size: "))
+print("Enter elements: ", end="")
+arr[:n] = [int(x) for x in input().split()]
+tar = int(input("Enter search key: "))
+
+index = -1
+for i in range(n):
+    if arr[i] == tar:
+        index = i + 1
+        break
+
+if index > -1:
+    print(f"{arr[i]} found at position {index}")
+else:
+    print(f"{tar} not found")
+
+sys.exit(0)
+
+
