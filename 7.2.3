@@ -1,0 +1,20 @@
+import string
+
+def restrcpy(a, b):
+    if b == '':
+        a[0] = '\0'
+        return
+    a[0] = b[0]
+    restrcpy(a[1:], b[1:])
+
+def main():
+    s1 = input("Enter first string: ")
+    s2 = input("Enter second string: ")
+    a = list(s2)
+    restrcpy(a, s1)
+    print("After copy the First string:", s1)
+    print("Second string:", ''.join(a))
+
+if __name__ == "__main__":
+    main()
+
