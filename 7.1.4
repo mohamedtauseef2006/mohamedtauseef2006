@@ -1,0 +1,20 @@
+import string
+
+def main():
+    i = 0
+    str1 = input("Enter the first string: ")
+    str2 = input("Enter the second string: ")
+    len1 = len(str1)
+    len2 = len(str2)
+    print(f"Length of first string: {len1}")
+    print(f"Length of second string: {len2}")
+    print(f"Copy of first string: {str1}")
+    print(f"Concatenation of both strings: {str1}{str2}")
+    str1_upper = "".join(chr(ord(c) - 32) if 'a' <= c <= 'z' else c for c in str1)
+    print(f"Uppercase of first string: {str1_upper}")
+    print("First string is alphabetically before second string.")
+
+if __name__ == "__main__":
+    main()
+
+
